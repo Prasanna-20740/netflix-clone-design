@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <meta name="description" content="Watch Netflix movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more.">
+    <link rel="stylesheet" href="netflix.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="Logonetflix.png" type="image/png">
+</head>
+<body>
+
+    <!-- ===== TOP NAVBAR ===== -->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo" aria-label="Netflix Home">
+                    <img src="Netflix-Logo-Font-2.webp" alt="Netflix" class="logo-img">
+                </a>
+                
+                <div class="nav-actions">
+                    <div class="lang-picker">
+                        <svg class="lang-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1.07 8a6.93 6.93 0 0 1 .49-2.5h2.29a12.8 12.8 0 0 0-.21 2.5c0 .87.07 1.71.21 2.5H1.56A6.93 6.93 0 0 1 1.07 8zm4.36 0c0-.82.08-1.66.23-2.5h4.68c.15.84.23 1.68.23 2.5s-.08 1.66-.23 2.5H5.66c-.15-.84-.23-1.68-.23-2.5zm.37-3.5a11.9 11.9 0 0 1 1.4-2.88 5.96 5.96 0 0 1 .8 0c.5.83 1 1.83 1.4 2.88H5.8zm4.4 7c-.4 1.05-.9 2.05-1.4 2.88a5.96 5.96 0 0 1-.8 0c-.5-.83-1-1.83-1.4-2.88h3.6zm1.94-1c.14-.79.21-1.63.21-2.5 0-.87-.07-1.71-.21-2.5h2.29c.32.78.49 1.62.49 2.5 0 .88-.17 1.72-.49 2.5h-2.29zM13.7 4.5h-2.03a11.9 11.9 0 0 0-1.12-2.18 6.98 6.98 0 0 1 3.15 2.18zM5.45 2.32A11.9 11.9 0 0 0 4.33 4.5H2.3a6.98 6.98 0 0 1 3.15-2.18zm-3.15 9.18h2.03c.3 1 .68 1.74 1.12 2.18a6.98 6.98 0 0 1-3.15-2.18zm9.4 2.18c.44-.44.82-1.18 1.12-2.18h2.03a6.98 6.98 0 0 1-3.15 2.18z"/>
+                        </svg>
+                        <select id="lang-select" aria-label="Select Language">
+                            <option value="en">English</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                        </select>
+                        <svg class="dropdown-arrow" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        </svg>
+                    </div>
+                    <button class="btn-signin" id="btn-signin-nav">Sign In</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== HERO BANNER ===== -->
+        <div class="hero-wrapper">
+            <div class="hero-backdrop">
+                <img src="US-en-20200210-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="Netflix Backdrop" class="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="hero-title" id="txt-hero-title">Unlimited movies,<br>TV shows and more</h1>
+                <p class="hero-price" id="txt-hero-price">Starts at ₹149. Cancel at any time.</p>
+                <p class="hero-subtext" id="txt-hero-subtext">Ready to watch? Enter your email to create or restart your membership.</p>
+
+                <form class="email-signup-form" id="hero-email-form" onsubmit="handleEmailSubmit(event, 'hero')">
+                    <div class="floating-input-container">
+                        <input type="email" id="hero-email-input" class="floating-input" placeholder=" " required autocomplete="email">
+                        <label for="hero-email-input" class="floating-label" id="txt-label-email">Email address</label>
+                        <span class="input-error-msg" id="hero-error">Please enter a valid email address.</span>
+                    </div>
+                    <button type="submit" class="btn-cta" id="btn-hero-cta">
+                        <span id="txt-btn-cta">Get Started</span>
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== ICONIC NETFLIX ARC CURVE ===== -->
+        <div class="hero-curve-container">
+            <div class="hero-curve-border"></div>
+        </div>
+    </header>
+
+    <!-- ===== PROMO NOTIFICATION PILL ===== -->
+    <section class="promo-strip">
+        <div class="promo-box">
+            <div class="popcorn-container">
+                <img src="popcorn-png-6.png" alt="Popcorn" class="popcorn-icon">
+            </div>
+            <div class="promo-info">
+                <h4>The Netflix you love for just ₹149.</h4>
+                <p>Get our most affordable, advert-supported plan with thousands of hours of entertainment.</p>
+            </div>
+            <button class="promo-link-btn" onclick="scrollToFaq()">Learn More</button>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-container">
+
+        <!-- ===== TRENDING SECTION (WITH CAROUSEL & 3D NUMBERS) ===== -->
+        <section class="section trending-section" id="trending-section">
+            <div class="section-header">
+                <h2 class="section-heading" id="txt-trending-heading">Trending Now</h2>
+                
+                <div class="trending-filter-bar">
+                    <div class="filter-dropdown">
+                        <select id="country-filter" aria-label="Country Filter">
+                            <option value="IN">India</option>
+                            <option value="GLOBAL">Global</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select id="media-filter" aria-label="Media Category Filter" onchange="filterCategory(this.value)">
+                            <option value="all">Movies & TV Shows</option>
+                            <option value="movies">Movies</option>
+                            <option value="shows">TV Shows</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel with Left/Right Navigation -->
+            <div class="carousel-container">
+                <button class="carousel-nav-btn prev" id="carousel-prev" onclick="scrollCarousel(-1)" aria-label="Previous Movies">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="trending-slider" id="trending-slider">
+                    <!-- Movie 1 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(1)">
+                        <span class="rank-number">1</span>
+                        <div class="poster-wrap">
+                            <img src="224657-goat3.jpeg" alt="The Greatest of All Time" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">Recently Added</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 2 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(2)">
+                        <span class="rank-number">2</span>
+                        <div class="poster-wrap">
+                            <img src="ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg" alt="Good Bad Ugly" class="poster-img" onerror="this.src='ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg'">
+                            <div class="card-badge">Top 10</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 3 -->
+                    <div class="movie-card" data-category="shows" onclick="openMovieModal(3)">
+                        <span class="rank-number">3</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80" alt="Squid Game Season 2" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">New Season</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 4 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(4)">
+                        <span class="rank-number">4</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?auto=format&fit=crop&w=500&q=80" alt="Leo: Bloody Sweet" class="poster-img" onerror="this.src='ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg'">
+                            <div class="card-badge">Superhit</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 5 -->
+                    <div class="movie-card" data-category="shows" onclick="openMovieModal(5)">
+                        <span class="rank-number">5</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format&fit=crop&w=500&q=80" alt="Money Heist" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">Trending</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 6 -->
+                    <div class="movie-card" data-category="shows" onclick="openMovieModal(6)">
+                        <span class="rank-number">6</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" alt="Stranger Things" class="poster-img" onerror="this.src='ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg'">
+                            <div class="card-badge">Final Season</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 7 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(7)">
+                        <span class="rank-number">7</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80" alt="Maharaja" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">Blockbuster</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 8 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(8)">
+                        <span class="rank-number">8</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=500&q=80" alt="Devara Part 1" class="poster-img" onerror="this.src='ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg'">
+                            <div class="card-badge">Top 10</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 9 -->
+                    <div class="movie-card" data-category="shows" onclick="openMovieModal(9)">
+                        <span class="rank-number">9</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?auto=format&fit=crop&w=500&q=80" alt="Wednesday" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">Fan Favorite</div>
+                        </div>
+                    </div>
+
+                    <!-- Movie 10 -->
+                    <div class="movie-card" data-category="movies" onclick="openMovieModal(10)">
+                        <span class="rank-number">10</span>
+                        <div class="poster-wrap">
+                            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Amar Singh Chamkila" class="poster-img" onerror="this.src='224657-goat3.jpeg'">
+                            <div class="card-badge">Award Winner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-nav-btn next" id="carousel-next" onclick="scrollCarousel(1)" aria-label="Next Movies">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== MORE REASONS TO JOIN (OFFICIAL NETFLIX CARDS) ===== -->
+        <section class="section reasons-section">
+            <h2 class="section-heading" id="txt-reasons-heading">More reasons to join</h2>
+            <div class="reasons-grid">
+                <!-- Card 1 -->
+                <div class="reason-card">
+                    <div class="reason-text">
+                        <h3>Stories tailored to your taste</h3>
+                        <p>Discover personalized recommendations based on the shows and movies you already love.</p>
+                    </div>
+                    <div class="reason-artwork">
+                        <svg viewBox="0 0 72 72" width="72" height="72" fill="none">
+                            <rect x="6" y="10" width="60" height="42" rx="4" stroke="#ff2a51" stroke-width="3"/>
+                            <path d="M26 60h20M36 52v8" stroke="#ff2a51" stroke-width="3" stroke-linecap="round"/>
+                            <polygon points="30,22 48,31 30,40" fill="#e50914"/>
+                            <circle cx="56" cy="18" r="3" fill="#ff708d"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reason-card">
+                    <div class="reason-text">
+                        <h3>Cancel or switch plans anytime</h3>
+                        <p>No contracts, no cancellation fees, no hassle. Join today and cancel whenever you want online.</p>
+                    </div>
+                    <div class="reason-artwork">
+                        <svg viewBox="0 0 72 72" width="72" height="72" fill="none">
+                            <circle cx="36" cy="36" r="28" stroke="#ff2a51" stroke-width="3"/>
+                            <path d="M26 36l8 8 16-16" stroke="#ff708d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reason-card">
+                    <div class="reason-text">
+                        <h3>A place just for kids</h3>
+                        <p>Send children on adventures with their favourite characters in a space made just for them — free with membership.</p>
+                    </div>
+                    <div class="reason-artwork">
+                        <svg viewBox="0 0 72 72" width="72" height="72" fill="none">
+                            <circle cx="36" cy="36" r="26" stroke="#ff2a51" stroke-width="3"/>
+                            <circle cx="28" cy="30" r="3" fill="#ff708d"/>
+                            <circle cx="44" cy="30" r="3" fill="#ff708d"/>
+                            <path d="M26 42c3 4 7 6 10 6s7-2 10-6" stroke="#e50914" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M22 14c-4-4-10-2-10 6 0 6 6 10 10 10" stroke="#ff2a51" stroke-width="3"/>
+                            <path d="M50 14c4-4 10-2 10 6 0 6-6 10-10 10" stroke="#ff2a51" stroke-width="3"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="reason-card">
+                    <div class="reason-text">
+                        <h3>For your phone, tablet, laptop and TV</h3>
+                        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
+                    </div>
+                    <div class="reason-artwork">
+                        <svg viewBox="0 0 72 72" width="72" height="72" fill="none">
+                            <rect x="8" y="16" width="38" height="26" rx="3" stroke="#ff2a51" stroke-width="3"/>
+                            <rect x="36" y="24" width="28" height="36" rx="3" stroke="#ff708d" stroke-width="3" fill="#141414"/>
+                            <circle cx="50" cy="54" r="2" fill="#ff2a51"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FREQUENTLY ASKED QUESTIONS ===== -->
+        <section class="section faq-section" id="faq-section">
+            <h2 class="section-heading" id="txt-faq-heading">Frequently Asked Questions</h2>
+            
+            <div class="faq-accordion-list">
+                <!-- Item 1 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>What is Netflix?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more on thousands of internet-connected devices.</p>
+                        <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>How much does Netflix cost?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>Where can I watch?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.</p>
+                        <p>You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>How do I cancel?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>What can I watch on Netflix?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <button class="faq-question">
+                        <span>Is Netflix good for kids?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.</p>
+                        <p>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeated Bottom Email Form -->
+            <div class="bottom-cta-container">
+                <p class="cta-reminder">Ready to watch? Enter your email to create or restart your membership.</p>
+                <form class="email-signup-form" id="bottom-email-form" onsubmit="handleEmailSubmit(event, 'bottom')">
+                    <div class="floating-input-container">
+                        <input type="email" id="bottom-email-input" class="floating-input" placeholder=" " required autocomplete="email">
+                        <label for="bottom-email-input" class="floating-label">Email address</label>
+                        <span class="input-error-msg" id="bottom-error">Please enter a valid email address.</span>
+                    </div>
+                    <button type="submit" class="btn-cta">
+                        <span>Get Started</span>
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== NETFLIX OFFICIAL FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-wrap">
+            <p class="footer-help">Questions? Call <a href="tel:000-800-919-1694" class="phone-link">000-800-919-1694</a></p>
+            
+            <div class="footer-links-grid">
+                <ul class="footer-column">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Speed Test</a></li>
+                </ul>
+                <ul class="footer-column">
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Legal Notices</a></li>
+                </ul>
+                <ul class="footer-column">
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Ways to Watch</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Only on Netflix</a></li>
+                </ul>
+                <ul class="footer-column">
+                    <li><a href="#">Media Centre</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="lang-picker footer-lang">
+                    <svg class="lang-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1.07 8a6.93 6.93 0 0 1 .49-2.5h2.29a12.8 12.8 0 0 0-.21 2.5c0 .87.07 1.71.21 2.5H1.56A6.93 6.93 0 0 1 1.07 8zm4.36 0c0-.82.08-1.66.23-2.5h4.68c.15.84.23 1.68.23 2.5s-.08 1.66-.23 2.5H5.66c-.15-.84-.23-1.68-.23-2.5zm.37-3.5a11.9 11.9 0 0 1 1.4-2.88 5.96 5.96 0 0 1 .8 0c.5.83 1 1.83 1.4 2.88H5.8zm4.4 7c-.4 1.05-.9 2.05-1.4 2.88a5.96 5.96 0 0 1-.8 0c-.5-.83-1-1.83-1.4-2.88h3.6zm1.94-1c.14-.79.21-1.63.21-2.5 0-.87-.07-1.71-.21-2.5h2.29c.32.78.49 1.62.49 2.5 0 .88-.17 1.72-.49 2.5h-2.29zM13.7 4.5h-2.03a11.9 11.9 0 0 0-1.12-2.18 6.98 6.98 0 0 1 3.15 2.18zM5.45 2.32A11.9 11.9 0 0 0 4.33 4.5H2.3a6.98 6.98 0 0 1 3.15-2.18zm-3.15 9.18h2.03c.3 1 .68 1.74 1.12 2.18a6.98 6.98 0 0 1-3.15-2.18zm9.4 2.18c.44-.44.82-1.18 1.12-2.18h2.03a6.98 6.98 0 0 1-3.15 2.18z"/>
+                    </svg>
+                    <select id="footer-lang-select" onchange="syncLang(this.value)">
+                        <option value="en">English</option>
+                        <option value="ta">தமிழ் (Tamil)</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                    </select>
+                    <svg class="dropdown-arrow" viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </div>
+                <p class="copyright">Netflix India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== AUTHENTIC NETFLIX SIGN-IN MODAL ===== -->
+    <div class="modal-backdrop" id="signin-modal" onclick="closeOnBackdrop(event, 'signin-modal')">
+        <div class="signin-card">
+            <button class="modal-close-btn" onclick="closeModal('signin-modal')" aria-label="Close modal">✕</button>
+            <h2 class="signin-title">Sign In</h2>
+            <form onsubmit="handleSignInSubmit(event)">
+                <div class="signin-field">
+                    <input type="text" id="signin-user" required placeholder="Email or mobile number">
+                </div>
+                <div class="signin-field password-field">
+                    <input type="password" id="signin-pass" required placeholder="Password">
+                    <button type="button" class="btn-toggle-pass" onclick="togglePassVisibility()">Show</button>
+                </div>
+                <button type="submit" class="btn-signin-submit">Sign In</button>
+                
+                <div class="signin-divider">
+                    <span>OR</span>
+                </div>
+                <button type="button" class="btn-signin-code">Use a sign-in code</button>
+                
+                <div class="signin-help">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <div class="signin-remember">
+                    <label class="remember-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="custom-check"></span>
+                        <span>Remember me</span>
+                    </label>
+                </div>
+
+                <div class="signin-extra">
+                    <p>New to Netflix? <a href="#" onclick="focusEmailInput()">Sign up now.</a></p>
+                    <small>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MOVIE QUICK-PREVIEW MODAL ===== -->
+    <div class="modal-backdrop" id="movie-modal" onclick="closeOnBackdrop(event, 'movie-modal')">
+        <div class="movie-modal-card">
+            <button class="modal-close-btn" onclick="closeModal('movie-modal')" aria-label="Close preview">✕</button>
+            <div class="modal-hero-banner" id="modal-banner">
+                <img id="modal-img" src="" alt="Movie backdrop">
+                <div class="modal-hero-gradient"></div>
+                <div class="modal-controls">
+                    <h2 class="modal-movie-title" id="modal-title">Movie Title</h2>
+                    <div class="modal-btns">
+                        <button class="btn-play-now" onclick="playNetflixSound()">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21"></polygon>
+                            </svg>
+                            <span>Play</span>
+                        </button>
+                        <button class="btn-circle-action" title="Add to My List">+</button>
+                        <button class="btn-circle-action" title="I like this">👍</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-body-content">
+                <div class="modal-meta-row">
+                    <span class="meta-match" id="modal-match">98% Match</span>
+                    <span class="meta-year" id="modal-year">2024</span>
+                    <span class="meta-badge" id="modal-age">U/A 16+</span>
+                    <span class="meta-duration" id="modal-duration">2h 45m</span>
+                    <span class="meta-quality">4K Ultra HD</span>
+                    <span class="meta-quality">5.1</span>
+                </div>
+                <p class="modal-synopsis" id="modal-synopsis">
+                    Description goes here...
+                </p>
+                <div class="modal-credits">
+                    <p><strong>Starring:</strong> <span id="modal-cast">Cast</span></p>
+                    <p><strong>Genres:</strong> <span id="modal-genres">Action, Thriller, Drama</span></p>
+                    <p><strong>This show is:</strong> <span id="modal-tags">Gritty, Adrenaline Rush, Exciting</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="toast-notification" id="toast"></div>
+
+    <script>
+        // Movie details database for interactive previews
+        const movieDB = {
+            1: {
+                title: "The Greatest of All Time (GOAT)",
+                img: "224657-goat3.jpeg",
+                match: "99% Match",
+                year: "2024",
+                age: "U/A 16+",
+                duration: "2h 59m",
+                synopsis: "A top hostage negotiator and elite field agent in the Special Anti-Terrorist Squad faces a blast from his past that forces him to return for one final, personal and high-stakes mission.",
+                cast: "Thalapathy Vijay, Prashanth, Prabhu Deva, Sneha",
+                genres: "Action, Sci-Fi Thriller, Spy",
+                tags: "Explosive, Mind-bending, Action-packed"
+            },
+            2: {
+                title: "Good Bad Ugly",
+                img: "ajithkumar-good-bad-ugly-new-look-like-dheena-movie-goes-trending-gbu-shooting-complited1734227781_2.jpeg",
+                match: "98% Match",
+                year: "2025",
+                age: "U/A 16+",
+                duration: "2h 38m",
+                synopsis: "A stylish, ruthless don with an unpredictable streak collides with the criminal underworld and international cartels in an adrenaline-pumping rollercoaster ride.",
+                cast: "Ajith Kumar, Trisha Krishnan, Arjun Das",
+                genres: "Action, Gangster, Thriller",
+                tags: "Slick, High-octane, Powerful"
+            },
+            3: {
+                title: "Squid Game: Season 2",
+                img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
+                match: "97% Match",
+                year: "2024",
+                age: "A 18+",
+                duration: "Season 2",
+                synopsis: "Three years after winning the deadly Squid Game, Player 456 gives up going to the states and returns with a new resolve in mind: dismantle the organization from within.",
+                cast: "Lee Jung-jae, Lee Byung-hun, Wi Ha-jun",
+                genres: "Korean, TV Thrillers, Drama",
+                tags: "Suspenseful, Chilling, Dark"
+            },
+            4: {
+                title: "Leo: Bloody Sweet",
+                img: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?auto=format&fit=crop&w=800&q=80",
+                match: "96% Match",
+                year: "2023",
+                age: "U/A 16+",
+                duration: "2h 44m",
+                synopsis: "A gentle café owner in Himachal Pradesh becomes a local hero through an act of violence, drawing the attention of an international drug cartel that believes he is a former syndicate hitman.",
+                cast: "Thalapathy Vijay, Sanjay Dutt, Arjun Sarja, Trisha",
+                genres: "Action, Crime Thriller",
+                tags: "Violent, Gritty, Adrenaline Rush"
+            },
+            5: {
+                title: "Money Heist (La Casa de Papel)",
+                img: "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format&fit=crop&w=800&q=80",
+                match: "98% Match",
+                year: "5 Parts",
+                age: "A 18+",
+                duration: "5 Parts",
+                synopsis: "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out the biggest heist in history.",
+                cast: "Úrsula Corberó, Álvaro Morte, Itziar Ituño, Pedro Alonso",
+                genres: "Spanish, TV Thrillers, Crime",
+                tags: "Suspenseful, Strategic, Iconic"
+            },
+            6: {
+                title: "Stranger Things",
+                img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+                match: "98% Match",
+                year: "4 Seasons",
+                age: "U/A 16+",
+                duration: "4 Seasons",
+                synopsis: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl with telekinetic powers.",
+                cast: "Millie Bobby Brown, Finn Wolfhard, Winona Ryder, David Harbour",
+                genres: "Sci-Fi TV, Horror, 80s Nostalgia",
+                tags: "Ominous, Nostalgic, Supernatural"
+            },
+            7: {
+                title: "Maharaja",
+                img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=800&q=80",
+                match: "99% Match",
+                year: "2024",
+                age: "U/A 16+",
+                duration: "2h 21m",
+                synopsis: "A quiet barber embarks on an unyielding quest for retribution after his home is burgled and a treasured possession is taken, revealing layered twists and deep emotional stakes.",
+                cast: "Vijay Sethupathi, Anurag Kashyap, Mamta Mohandas",
+                genres: "Crime, Drama, Mystery Thriller",
+                tags: "Mind-bending, Emotional, Gripping"
+            },
+            8: {
+                title: "Devara: Part 1",
+                img: "https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=800&q=80",
+                match: "94% Match",
+                year: "2024",
+                age: "U/A 16+",
+                duration: "2h 58m",
+                synopsis: "An intrepid warrior from the coastal red lands wages a solitary war against weapon smugglers and corrupt tribal chieftains to protect his people.",
+                cast: "N.T. Rama Rao Jr., Saif Ali Khan, Janhvi Kapoor",
+                genres: "Epic Action, Coastal Period Drama",
+                tags: "Action, High Drama, Cinematic"
+            },
+            9: {
+                title: "Wednesday",
+                img: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?auto=format&fit=crop&w=800&q=80",
+                match: "95% Match",
+                year: "2022",
+                age: "U/A 13+",
+                duration: "Season 1",
+                synopsis: "Smart, sarcastic and a little dead inside, Wednesday Addams investigates a monstrous murder spree while making new friends — and foes — at Nevermore Academy.",
+                cast: "Jenna Ortega, Gwendoline Christie, Riki Lindhome",
+                genres: "Fantasy TV Shows, Mystery, Dark Comedy",
+                tags: "Witty, Dark, Quirky"
+            },
+            10: {
+                title: "Amar Singh Chamkila",
+                img: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80",
+                match: "93% Match",
+                year: "2024",
+                age: "U/A 16+",
+                duration: "2h 25m",
+                synopsis: "A humble singer’s brash lyrics ignite fame and fury across Punjab as he grapples with soaring success and extreme criticism before his untimely assassination.",
+                cast: "Diljit Dosanjh, Parineeti Chopra, Anurag Arora",
+                genres: "Biographical Drama, Musical, History",
+                tags: "Poignant, Heartfelt, Masterpiece"
+            }
+        };
+
+        // Scroll sticky navbar background
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Toggle Logic
+        function toggleFaq(item) {
+            const isActive = item.classList.contains('active');
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            // If wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Carousel Scroll
+        function scrollCarousel(direction) {
+            const slider = document.getElementById('trending-slider');
+            const cardWidth = 220; // card + gap approx
+            slider.scrollBy({
+                left: direction * (cardWidth * 3),
+                behavior: 'smooth'
+            });
+        }
+
+        // Filter Category
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.movie-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Movie Preview Modal
+        function openMovieModal(id) {
+            const movie = movieDB[id];
+            if (!movie) return;
+
+            document.getElementById('modal-img').src = movie.img;
+            document.getElementById('modal-title').textContent = movie.title;
+            document.getElementById('modal-match').textContent = movie.match;
+            document.getElementById('modal-year').textContent = movie.year;
+            document.getElementById('modal-age').textContent = movie.age;
+            document.getElementById('modal-duration').textContent = movie.duration;
+            document.getElementById('modal-synopsis').textContent = movie.synopsis;
+            document.getElementById('modal-cast').textContent = movie.cast;
+            document.getElementById('modal-genres').textContent = movie.genres;
+            document.getElementById('modal-tags').textContent = movie.tags;
+
+            const modal = document.getElementById('movie-modal');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            playNetflixSound();
+        }
+
+        // Sign In Modal Open
+        document.getElementById('btn-signin-nav').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('signin-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close Modal Helper
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function closeOnBackdrop(e, modalId) {
+            if (e.target.id === modalId) {
+                closeModal(modalId);
+            }
+        }
+
+        // Toggle password view
+        function togglePassVisibility() {
+            const passInput = document.getElementById('signin-pass');
+            const btn = document.querySelector('.btn-toggle-pass');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                btn.textContent = 'Hide';
+            } else {
+                passInput.type = 'password';
+                btn.textContent = 'Show';
+            }
+        }
+
+        // Email Form Submit
+        function handleEmailSubmit(e, formType) {
+            e.preventDefault();
+            const input = document.getElementById(`${formType}-email-input`);
+            const val = input.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(val)) {
+                document.getElementById(`${formType}-error`).style.display = 'block';
+                input.focus();
+                return;
+            }
+            
+            document.getElementById(`${formType}-error`).style.display = 'none';
+            playNetflixSound();
+            showToast(`Welcome! Setting up Netflix membership for: ${val}`);
+            
+            setTimeout(() => {
+                document.getElementById('signin-modal').classList.add('open');
+                document.getElementById('signin-user').value = val;
+            }, 1200);
+        }
+
+        function handleSignInSubmit(e) {
+            e.preventDefault();
+            playNetflixSound();
+            showToast("Signing into your Netflix account...");
+            setTimeout(() => {
+                closeModal('signin-modal');
+                showToast("Welcome back to Netflix! Enjoy streaming.");
+            }, 1500);
+        }
+
+        function focusEmailInput() {
+            closeModal('signin-modal');
+            const heroInput = document.getElementById('hero-email-input');
+            heroInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            heroInput.focus();
+        }
+
+        function scrollToFaq() {
+            document.getElementById('faq-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('visible');
+            setTimeout(() => {
+                toast.classList.remove('visible');
+            }, 3500);
+        }
+
+        // Synthesize Authentic Netflix "Ta-Dum" Sound with Web Audio API!
+        function playNetflixSound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                const ctx = new AudioCtx();
+                
+                const now = ctx.currentTime;
+                // Bass Drum hit 1
+                const osc1 = ctx.createOscillator();
+                const gain1 = ctx.createGain();
+                osc1.type = 'sine';
+                osc1.frequency.setValueAtTime(95, now);
+                osc1.frequency.exponentialRampToValueAtTime(35, now + 0.45);
+                gain1.gain.setValueAtTime(0.7, now);
+                gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+                osc1.connect(gain1);
+                gain1.connect(ctx.destination);
+                osc1.start(now);
+                osc1.stop(now + 0.5);
+
+                // Deep cinematic brass chord hit 2 (The signature "Dum")
+                const osc2 = ctx.createOscillator();
+                const gain2 = ctx.createGain();
+                osc2.type = 'sawtooth';
+                osc2.frequency.setValueAtTime(110, now + 0.12);
+                osc2.frequency.exponentialRampToValueAtTime(55, now + 0.9);
+                gain2.gain.setValueAtTime(0, now);
+                gain2.gain.setValueAtTime(0.4, now + 0.12);
+                gain2.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                osc2.connect(gain2);
+                gain2.connect(ctx.destination);
+                osc2.start(now + 0.12);
+                osc2.stop(now + 1.2);
+            } catch (err) {
+                // AudioContext not allowed before user interaction
+            }
+        }
+
+        // Multi-Language Switcher
+        const translations = {
+            en: {
+                heroTitle: "Unlimited movies,<br>TV shows and more",
+                heroPrice: "Starts at ₹149. Cancel at any time.",
+                heroSubtext: "Ready to watch? Enter your email to create or restart your membership.",
+                btnCta: "Get Started",
+                trendingHeading: "Trending Now",
+                reasonsHeading: "More reasons to join",
+                faqHeading: "Frequently Asked Questions",
+                labelEmail: "Email address"
+            },
+            ta: {
+                heroTitle: "வரம்பற்ற திரைப்படங்கள்,<br>டிவி நிகழ்ச்சிகள் மற்றும் பல",
+                heroPrice: "ரூ.149 முதல் தொடங்குகிறது. எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.",
+                heroSubtext: "பார்க்க தயாரா? உங்கள் மெம்பர்ஷிப்பைத் தொடங்க உங்கள் மின்னஞ்சலை உள்ளிடவும்.",
+                btnCta: "தொடங்குங்கள்",
+                trendingHeading: "தற்போது பிரபலமாக உள்ளவை",
+                reasonsHeading: "இணைய மேலும் பல காரணங்கள்",
+                faqHeading: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+                labelEmail: "மின்னஞ்சல் முகவரி"
+            },
+            hi: {
+                heroTitle: "अनलिमिटेड फ़िल्में,<br>टीवी शो और बहुत कुछ",
+                heroPrice: "₹149 से शुरू। कभी भी कैंसल करें।",
+                heroSubtext: "देखने के लिए तैयार हैं? अपनी मेंबरशिप शुरू करने के लिए अपना ईमेल डालें।",
+                btnCta: "शुरू करें",
+                trendingHeading: "भारत में अभी ट्रेंड कर रहा है",
+                reasonsHeading: "शामिल होने के और भी कारण",
+                faqHeading: "अक्सर पूछे जाने वाले सवाल",
+                labelEmail: "ईमेल पता"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang] || translations.en;
+            document.getElementById('txt-hero-title').innerHTML = t.heroTitle;
+            document.getElementById('txt-hero-price').textContent = t.heroPrice;
+            document.getElementById('txt-hero-subtext').textContent = t.heroSubtext;
+            document.getElementById('txt-btn-cta').textContent = t.btnCta;
+            document.getElementById('txt-trending-heading').textContent = t.trendingHeading;
+            document.getElementById('txt-reasons-heading').textContent = t.reasonsHeading;
+            document.getElementById('txt-faq-heading').textContent = t.faqHeading;
+            document.getElementById('txt-label-email').textContent = t.labelEmail;
+
+            document.getElementById('lang-select').value = lang;
+            document.getElementById('footer-lang-select').value = lang;
+        }
+
+        document.getElementById('lang-select').addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+        });
+
+        function syncLang(val) {
+            setLanguage(val);
+        }
+    </script>
+</body>
+</html>
